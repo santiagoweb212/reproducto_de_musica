@@ -1,4 +1,7 @@
 const express = require('express')
-const routes = require("./routes/index")
+const cors =require('cors')
 const app = express()
-app.use('/',routes)
+app.use(cors())
+app.use(express.json())
+app.use('/api',require('./routes/index'))
+module.exports= app
