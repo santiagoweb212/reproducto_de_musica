@@ -1,7 +1,8 @@
-const express = require("express");
+
+const app = require("./app");
 const sequelize = require("./config/database");
 require("./relations/relations");
-const app = express();
+
 const PORT = 3000;
 const main = async () => {
   try {
