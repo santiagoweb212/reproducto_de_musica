@@ -7,7 +7,6 @@ const getUsuarios = async (req, res) => {
 const postUsuarios = async (req, res) => {
   try {
     const { nombre, email, password } = req.body;
-    console.log("esty en el controlador");
     const newUser = await usuarios.create({
       nombre_usuario: nombre,
       correo_electronico: email,
