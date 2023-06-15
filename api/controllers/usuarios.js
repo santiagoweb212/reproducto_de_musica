@@ -1,3 +1,4 @@
+const encripPassword = require("../helpers/encripPassword");
 const usuarios = require("../models/usuarios");
 const getUsuarios = async (req, res) => {
   try {
@@ -10,7 +11,7 @@ const postUsuarios = async (req, res) => {
     const newUser = await usuarios.create({
       nombre_usuario: nombre,
       correo_electronico: email,
-      password,
+      password: await encripPassword(password),
     });
     res.status(200).json(newUser);
   } catch (error) {
